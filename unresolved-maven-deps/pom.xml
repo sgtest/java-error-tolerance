@@ -15,11 +15,18 @@
   </properties>
 
   <dependencies>
+    <!-- Include both a working dep and a broken dep so we can make
+         sure the broken dep doesn't prevent other deps from being
+         resolved and their refs in code resolved. -->
     <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-csv</artifactId>
+      <version>1.0</version>
+    </dependency>
+    <dependency>
+      <groupId>some-group-that-doesnt-exist</groupId>
+      <artifactId>some-artifact-that-doesnt-exist</artifactId>
+      <version>1.2.3</version>
     </dependency>
   </dependencies>
 </project>
